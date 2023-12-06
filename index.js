@@ -26,7 +26,7 @@ app.get('/api/payment', (req, res) => {
     res.json({
         paymentLink,
     });
-});a
+});
 // Define the route for the HTTP POST request
 app.post('/create-order', async (req, res) => {
     const url = 'https://pfe-apigw-uat.porter.in/v1/orders/create';
