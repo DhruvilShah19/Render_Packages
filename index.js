@@ -58,7 +58,7 @@ app.get('/track-order/:id', (req, res) => {
 
     var id = req.params.id;
     // Make GET request with custom headers
-    axios.get(`https://pfe-apigw-uat.porter.in/v1/orders/${id}`, { headers })
+    axios.get(`https://pfe-apigw.porter.in/v1/orders/${id}`, { headers })
         .then(response => {
             res.status(response.status).json(response.data);
             console.log(response.data);
