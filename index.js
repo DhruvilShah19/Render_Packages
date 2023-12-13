@@ -29,7 +29,7 @@ app.get('/api/payment', (req, res) => {
 });
 // Define the route for the HTTP POST request
 app.post('/create-order', async (req, res) => {
-    const url = 'https://pfe-apigw-uat.porter.in/v1/orders/create';
+    const url = 'https://pfe-apigw.porter.in/v1/orders/create';
     const apiKey = '4330e319-edc7-4110-880f-b2747bf666db';
 
     // Extract the request data from the client
