@@ -48,6 +48,27 @@ app.post('/create-order', async (req, res) => {
     console.log(responseData);
 
 });
+
+app.post('/get-quote', async (req, res) => {
+    const url = 'https://pfe-apigw.porter.in/v1/get_quote';
+    const apiKey = '4330e319-edc7-4110-880f-b2747bf666db';
+
+    // Extract the request data from the client
+    const requestData = req.body;
+    console.log(req.body);
+    // Make the HTTP POST request with the key header
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'X-API-Key': apiKey, 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestData)
+    });
+
+    // Parse the response as JSON and send it back to the client
+    const responseData = await response.json();
+    res.json(responseData);
+    console.log(responseData);
+
+});
 app.get('/track-order/:id', (req, res) => {
     const apiKey = '4330e319-edc7-4110-880f-b2747bf666db';
     // Set custom headers
